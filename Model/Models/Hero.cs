@@ -10,7 +10,7 @@ namespace Model
     {
         public int HeroID { get; set; }
         public string Name { get; set; }
-        public decimal Age { get; set; }
+        public int Age { get; set; }
         
         public int Fitness { get; set; }
         public int Mind { get; set; }
