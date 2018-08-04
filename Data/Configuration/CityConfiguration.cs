@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Configuration
+namespace Data
 {
-    class CityConfiguration : EntityTypeConfiguration<City>
+    public class CityConfiguration : EntityTypeConfiguration<City>
     {
         public CityConfiguration()
         {
