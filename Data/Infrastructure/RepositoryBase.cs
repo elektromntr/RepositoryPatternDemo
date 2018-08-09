@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data
 {
     public abstract class RepositoryBase<T> where T : class
     {
         #region Properties
-        private StoreEntities dataContext;
+        private RepoPatternDemoEntities dataContext;
         private readonly IDbSet<T> dbSet;
 
         protected IDbFactory DbFactory
@@ -18,7 +16,7 @@ namespace Data
             private set;
         }
 
-        protected StoreEntities DbContext
+        protected RepoPatternDemoEntities DbContext
         {
             get { return dataContext ?? (dataContext = DbFactory.Init()); }
         }
