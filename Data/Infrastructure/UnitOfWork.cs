@@ -12,7 +12,7 @@
 
         public RepoPatternDemoEntities DbContext
         {
-            get { return dbContext ?? (dbContext = dbContext.Init()); }
+            get { return dbContext ?? (dbContext = dbFactory.Init()); }
         }
 
         public void Commit()

@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace Data
 {
-    class RepoPatternDemoEntities : DbContext
+    public class RepoPatternDemoEntities : DbContext
     {
         public RepoPatternDemoEntities() : base("RepoPatternDemoEntities") { }
 
