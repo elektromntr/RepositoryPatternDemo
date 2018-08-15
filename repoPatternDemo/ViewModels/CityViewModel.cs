@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 
-namespace Model
+namespace Web
 {
-    public class City
+    public class CityViewModel
     {
         public int CityID { get; set; }
         public string Name { get; set; }
 
-        public virtual List<Hero> Heroes { get; set; }
+        public List<HeroViewModel> Heroes { get; set; }
     }
 }
