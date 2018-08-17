@@ -1,9 +1,5 @@
 ﻿using Model;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data
 {
@@ -14,14 +10,14 @@ namespace Data
 
         public City GetCityByName(string cityName)
         {
-            var city = this.DbContext.City.Where(c => c.Name == cityName).FirstOrDefault();
+            var city = this.DbContext.Cities.Where(c => c.Name == cityName).FirstOrDefault();
 
             return city;
         }
+    }
 
-        public interface ICityRepository : IRepository<City>
+    public interface ICityRepository : IRepository<City>
         {
             City GetCityByName(string cityName);
-        }
-    }
+        }   
 }

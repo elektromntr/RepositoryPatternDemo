@@ -26,10 +26,5 @@ namespace Model
         {
             set => DateCreated = DateTime.Now;
         }
-
-        /*public DateCreated()
-        {
-            DateCreated = DateTime.Now;
-        }*/
     }
 }
