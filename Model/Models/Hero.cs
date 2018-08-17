@@ -13,14 +13,23 @@ namespace Model
         public int Mind { get; set; }
         public int Empathy { get; set; }
 
+        public int Stars { get
+            {
+                return Fitness + Mind + Empathy;
+            }
+        }
+
         public int CityID { get; set; }
         public City City { get; set; }
 
-        public DateTime DateCreated { get; set; }
+        public DateTime DateCreated
+        {
+            set => DateCreated = DateTime.Now;
+        }
 
-        public DateCreated()
+        /*public DateCreated()
         {
             DateCreated = DateTime.Now;
-        }
+        }*/
     }
 }
