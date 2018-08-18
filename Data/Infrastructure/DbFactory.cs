@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data
+namespace Data.Infrastructure
 {
     public class DbFactory : Disposable, IDbFactory
     {

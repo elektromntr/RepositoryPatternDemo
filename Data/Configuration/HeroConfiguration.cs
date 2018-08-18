@@ -1,7 +1,7 @@
 ﻿using Model;
 using System.Data.Entity.ModelConfiguration;
 
-namespace Data
+namespace Data.Configuration
 {
     public class HeroConfiguration : EntityTypeConfiguration<Hero>
     {

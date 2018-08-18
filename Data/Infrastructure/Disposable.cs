@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Data
+namespace Data.Infrastructure
 {
     public class Disposable : IDisposable
     {
@@ -31,9 +27,9 @@ namespace Data
             isDisposed(true);
         }
 
-            protected virtual void DisposeCore()
-            {
-            }
+        protected virtual void DisposeCore()
+        {
+        }
         
     }
 }

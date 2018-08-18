@@ -16,43 +16,43 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     @*@Html.DisplayFor(modelItem => item.Name)*@
-                    @Html.ActionLink("View all " + item.Name, "Index", new { city = item.Name }, new { @class = "pull-right" })
+                    @Html.ActionLink("Pokaż wszystkich z " + item.Name, "Index", new { city = item.Name }, new { @class = "pull-right" })
                     @using (Html.BeginForm("Filter", "Home", new { city = item.Name }, FormMethod.Post, new { @class = "navbar-form" }))
                     {
-                        @Html.TextBox("cityName", null, new { @class = "form-control", placeholder = "Szukaj w " + item.Name })
+                        @Html.TextBox("heroName", null, new { @class = "form-control", placeholder = "Szukaj w " + item.Name })
                     }
 
 
                 </div>
-                
-                @Html.Partial("Heroes")
-                
+                @foreach (var hero in item.Heroes)
+                {
+                    @Html.Partial("Heroes", hero)
+                }
                 <div class="panel-footer">
                     @using (Html.BeginForm("Create", "Home", FormMethod.Post,
                             new { enctype = "multipart/form-data", @class = "form-inline" }))
                     {
                         @Html.Hidden("HeroCity", item.CityID)
                         <div class="form-group">
-                            <label class="sr-only" for="heroName">Name</label>
-                            <input type="text" class="form-control" name="heroName" placeholder="Imię">
+                            <label class="sr-only" for="file">File</label>
+                            <input type="file" class="form-control" name="file" placeholder="Select picture..">
                         </div>
                         <div class="form-group">
-                            <label class="sr-only" for="heroName">Age</label>
+                            <input type="text" class="form-control" name="heroName" placeholder="Pseudonim">
+                        </div>
+                        <div class="form-group">
                             <input type="number" class="form-control" name="heroAge" placeholder="Wiek">
                         </div>
                         <div class="form-group">
-                            <label class="sr-only" for="heroName">Fitness</label>
                             <input type="text" class="form-control" name="heroFitness" placeholder="Sprawność">
                         </div>
                         <div class="form-group">
-                            <label class="sr-only" for="heroName">Mind</label>
                             <input type="text" class="form-control" name="heroMind" placeholder="Głowa">
                         </div>
                         <div class="form-group">
-                            <label class="sr-only" for="heroName">Emapthy</label>
                             <input type="text" class="form-control" name="heroEmpathy" placeholder="Empatia">
                         </div>
-                        <button type="submit" class="btn btn-primary">Utwórz</button>
+                        <button type="submit" class="btn btn-primary">Upload</button>
                     }
                 </div>
             </div>

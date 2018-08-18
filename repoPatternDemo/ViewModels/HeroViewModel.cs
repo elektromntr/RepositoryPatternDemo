@@ -1,4 +1,6 @@
-﻿namespace Web.ViewModels
+﻿using System.Collections.Generic;
+
+namespace Web.ViewModels
 {
     public class HeroViewModel
     {

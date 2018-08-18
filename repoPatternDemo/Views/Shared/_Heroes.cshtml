@@ -6,43 +6,40 @@
             <thead>
                 <tr class="table-heads">
                     <th>
-                        @Html.DisplayNameFor(model => model.Name)
+                        Pseudonim
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Fitness)
+                        Zdrowie
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Mind)
+                        Głowa
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Empathy)
+                        Uczynność
                     </th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Stars)
+                        Suma
                     </th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
-                {
-                <tr id="@item.HeroId.ToString()">
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)<span> (</span>@Html.DisplayFor(modelItem => item.Age)<span>)</span>
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Fitness)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Mind)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Empathy)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Stars)
-                    </td>
-                </tr>
-                }
+                    <tr id="@Model.HeroID">
+                        <td>
+                            @Model.Name<span> (</span>@Model.Age)<span>)</span>
+                        </td>
+                        <td>
+                            @Model.Fitness
+                        </td>
+                        <td>
+                            @Model.Mind
+                        </td>
+                        <td>
+                            @Model.Empathy
+                        </td>
+                        <td>
+                            @Model.Stars
+                        </td>
+                    </tr>
             </tbody>
         </table>
     </div>

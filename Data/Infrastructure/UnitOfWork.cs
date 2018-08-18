@@ -1,4 +1,4 @@
-﻿namespace Data
+﻿namespace Data.Infrastructure
 {
     public class UnitOfWork : IUnitOfWork
     {

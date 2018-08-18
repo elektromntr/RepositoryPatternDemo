@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Data
+namespace Data.Infrastructure
 {
     public interface IDbFactory : IDisposable
     {

@@ -1,7 +1,8 @@
 ﻿using Model;
 using System.Linq;
+using Data.Infrastructure;
 
-namespace Data
+namespace Data.Repositories
 {
     public class CityRepository : RepositoryBase<City>, ICityRepository
     {
