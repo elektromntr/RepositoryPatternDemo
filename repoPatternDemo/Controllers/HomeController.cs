@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Model;
+using repoPatternDemo.ViewModels;
 using Service;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,5 +31,34 @@ namespace Web
 
             return View(viewModelHeroes);
         }
+
+        // GET: Filtered
+        public ActionResult Filter(string city, string heroName)
+        {
+            IEnumerable<HeroViewModel> viewModelHeroes;
+            IEnumerable<Hero> heroes;
+
+            heroes = heroService.GetCityHeroes(city, heroName);
+            viewModelHeroes = Mapper.Map<IEnumerable<Hero>, IEnumerable<HeroViewModel>>(heroes);
+
+            return View(viewModelHeroes);
+        }
+
+        // POST: New Hero
+        [HttpPost]
+        public ActionResult Create(HeroFormViewModel newHero)
+        {
+            if (newHero != null)
+            {
+                var hero = Mapper.Map<HeroFormViewModel, Hero>(newHero);
+                heroService.CreateHero(hero);
+
+                heroService.SaveHero();
+            }
+            var city = cityService.GetCity(newHero.HeroCity);
+            return RedirectToAction("Index", new { city = city.Name });
+        }
+
+        
     }
 }

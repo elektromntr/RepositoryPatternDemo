@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Web
+﻿namespace Web.ViewModels
 {
     public class HeroViewModel
     {
@@ -14,6 +9,8 @@ namespace Web
         public int Fitness { get; set; }
         public int Mind { get; set; }
         public int Empathy { get; set; }
+
+        public int Stars { get; set; }
 
         public int CityID { get; set; }
     }

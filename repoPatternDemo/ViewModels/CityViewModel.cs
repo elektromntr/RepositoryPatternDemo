@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Web
+namespace Web.ViewModels
 {
     public class CityViewModel
     {

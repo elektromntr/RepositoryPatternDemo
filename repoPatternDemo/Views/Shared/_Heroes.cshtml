@@ -1,0 +1,49 @@
+﻿@model Web.ViewModels.HeroViewModel
+
+<div class="panel-body">
+    <div class="table">
+        <table class="table" cellspacing="0">
+            <thead>
+                <tr class="table-heads">
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Fitness)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Mind)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Empathy)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Stars)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr id="@item.HeroId.ToString()">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)<span> (</span>@Html.DisplayFor(modelItem => item.Age)<span>)</span>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fitness)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mind)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Empathy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Stars)
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

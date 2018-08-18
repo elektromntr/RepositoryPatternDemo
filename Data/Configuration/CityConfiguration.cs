@@ -8,7 +8,7 @@ namespace Data
         public CityConfiguration()
         {
             ToTable("Cities");
-            Property(c => c.Name).IsRequired().MaxLength(99);
+            Property(c => c.Name).IsRequired();
         }
     }
 }
