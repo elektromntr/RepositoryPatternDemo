@@ -1,7 +1,9 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
-using Data;
+using Data.Infrastructure;
+using Data.Repositories;
 using Service;
+using Web.Mappings;
 using System.Reflection;
 using System.Web.Mvc;
 

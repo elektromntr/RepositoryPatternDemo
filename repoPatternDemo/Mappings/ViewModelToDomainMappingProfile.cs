@@ -2,7 +2,7 @@
 using Model;
 using repoPatternDemo.ViewModels;
 
-namespace Web
+namespace Web.Mappings
 {
     public class ViewModelToDomainMappingProfile : Profile
     {
@@ -10,7 +10,7 @@ namespace Web
         {
             get { return "ViewModelToDomainMappings"; }
         }
-        public override void Configure()
+        protected override void Configure()
         {
             Mapper.CreateMap<HeroFormViewModel, Hero>()
                 .ForMember(h => h.Name, map => map.MapFrom(vm => vm.HeroName))

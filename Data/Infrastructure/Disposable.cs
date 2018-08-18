@@ -16,7 +16,6 @@ namespace Data.Infrastructure
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-
         private void Dispose(bool disposing)
         {
             if (!isDisposed && disposing)
@@ -24,7 +23,7 @@ namespace Data.Infrastructure
                 DisposeCore();
             }
 
-            isDisposed(true);
+            isDisposed = true;
         }
 
         protected virtual void DisposeCore()

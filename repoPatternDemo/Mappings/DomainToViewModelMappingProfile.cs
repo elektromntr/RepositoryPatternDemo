@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
 using Model;
+using Web.ViewModels;
 
-namespace Web
+namespace Web.Mappings
 {
     public class DomainToViewModelMappingProfile : Profile
     {
