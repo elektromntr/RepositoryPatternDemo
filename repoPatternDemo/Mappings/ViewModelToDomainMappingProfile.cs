@@ -18,7 +18,7 @@ namespace Web.Mappings
                 .ForMember(h => h.Fitness, map => map.MapFrom(vm => vm.HeroFitness))
                 .ForMember(h => h.Mind, map => map.MapFrom(vm => vm.HeroMind))
                 .ForMember(h => h.Empathy, map => map.MapFrom(vm => vm.HeroEmpathy))
-                .ForMember(h => h.City, map => map.MapFrom(vm => vm.HeroCity));
+                .ForMember(h => h.CityID, map => map.MapFrom(vm => vm.HeroCity));
         }
     }
 }

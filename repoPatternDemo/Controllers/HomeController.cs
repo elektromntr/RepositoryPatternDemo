@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using Model;
 using repoPatternDemo.ViewModels;
 using Service;
@@ -48,17 +49,24 @@ namespace Web.ViewModels
         [HttpPost]
         public ActionResult Create(HeroFormViewModel newHero)
         {
-            if (newHero != null)
+            try
             {
-                var hero = Mapper.Map<HeroFormViewModel, Hero>(newHero);
-                heroService.CreateHero(hero);
+                if (newHero != null)
+                {
+                    var hero = Mapper.Map<HeroFormViewModel, Hero>(newHero);
+                    heroService.CreateHero(hero);
 
-                heroService.SaveHero();
+                    heroService.SaveHero();
+                }
+                var city = cityService.GetCity(newHero.HeroCity);
+                return RedirectToAction("Index", new { city = city.Name });
             }
-            var city = cityService.GetCity(newHero.HeroCity);
-            return RedirectToAction("Index", new { city = city.Name });
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw e;
+            }
+            
         }
-
-        
     }
 }

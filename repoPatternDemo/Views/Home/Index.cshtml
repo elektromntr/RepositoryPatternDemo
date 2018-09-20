@@ -26,7 +26,7 @@
                 </div>
                 @foreach (var hero in item.Heroes)
                 {
-                    @Html.Partial("Heroes", hero)
+                    @Html.Partial("_Heroes", hero)
                 }
                 <div class="panel-footer">
                     @using (Html.BeginForm("Create", "Home", FormMethod.Post,
