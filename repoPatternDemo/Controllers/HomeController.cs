@@ -68,5 +68,12 @@ namespace Web.ViewModels
             }
             
         }
+
+        // GET: Hero Edit
+        public ActionResult EditHero(int id)
+        {
+            var hero = heroService.GetHero(id);
+            return View(hero);
+        }
     }
 }
