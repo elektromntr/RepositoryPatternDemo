@@ -4,6 +4,7 @@ using Model;
 using repoPatternDemo.ViewModels;
 using Service;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -74,6 +75,28 @@ namespace Web.ViewModels
         {
             var hero = heroService.GetHero(id);
             return View(hero);
+        }
+
+        // POST: Hero Edit
+        [HttpPost]
+        public ActionResult EditHero(Hero hero)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    heroService.UpdateHero(hero);
+                    heroService.SaveHero();
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (DataException)
+            {
+                ModelState.AddModelError("","Zapis zakończony niepowodzeniem");
+            }
+
+            return View(hero);
+
         }
     }
 }

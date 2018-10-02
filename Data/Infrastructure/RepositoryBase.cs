@@ -73,7 +73,6 @@ namespace Data.Infrastructure
         {
             return dbSet.Where(where).FirstOrDefault<T>();
         }
-
         #endregion
     }
 }

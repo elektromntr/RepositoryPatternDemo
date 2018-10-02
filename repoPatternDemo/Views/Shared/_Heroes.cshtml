@@ -4,43 +4,46 @@
     <div class="table">
         <table class="table" cellspacing="0">
             <thead>
-                <tr class="table-heads">
-                    <th>
-                        Pseudonim
-                    </th>
-                    <th>
-                        Zdrowie
-                    </th>
-                    <th>
-                        Głowa
-                    </th>
-                    <th>
-                        Uczynność
-                    </th>
-                    <th>
-                        Suma
-                    </th>
-                </tr>
+            <tr class="table-heads">
+                <th>
+                    Pseudonim
+                </th>
+                <th>
+                    Zdrowie
+                </th>
+                <th>
+                    Głowa
+                </th>
+                <th>
+                    Uczynność
+                </th>
+                <th>
+                    Suma
+                </th>
+            </tr>
             </thead>
             <tbody>
-                    <tr id="@Model.HeroID">
-                        <td>
-                            @Model.Name<span> (</span>@Model.Age<span>)</span>
-                        </td>
-                        <td>
-                            @Model.Fitness
-                        </td>
-                        <td>
-                            @Model.Mind
-                        </td>
-                        <td>
-                            @Model.Empathy
-                        </td>
-                        <td>
-                            @Model.Stars
-                        </td>
-                    </tr>
+            <tr id="@Model.HeroID">
+                <td>
+                    <a href="@Url.Action("EditHero", "Home", new {id = @Model.HeroID})">@Model.Name</a><span> (wiek: </span>@Model.Age<span>)</span>
+                </td>
+                <td>
+                    @Model.Fitness
+                </td>
+                <td>
+                    @Model.Mind
+                </td>
+                <td>
+                    @Model.Empathy
+                </td>
+                <td>
+                    @Model.Stars
+                </td>
+            </tr>
             </tbody>
         </table>
+    </div>
+    <div>
+        <a href="@Url.Action("")"></a>
     </div>
 </div>

@@ -13,6 +13,7 @@ namespace Service
         Hero GetHero(int id);
         void CreateHero(Hero hero);
         void SaveHero();
+        void UpdateHero(Hero hero);
     }
 
     public class HeroService : IHeroService
@@ -57,6 +58,11 @@ namespace Service
         public void SaveHero()
         {
             unitOfWork.Commit();
+        }
+
+        public void UpdateHero(Hero hero)
+        {
+            heroesRepository.Update(hero);
         }
         #endregion
     }
